@@ -2,9 +2,11 @@
 <html>
   <%= render 'layouts/head' %>
   <body>
-    <% flash.each do |type, message| %>
-      <% content_tag :div, message, class: "alert alert#{type}" %>
-    <% end %>
-    <%= yield %>
+    <div class="container">
+      <% flash.each do |type, message| %>
+        <% content_tag :div, message, class: "alert alert#{type}" %>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
