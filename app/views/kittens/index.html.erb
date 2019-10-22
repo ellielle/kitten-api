@@ -1,5 +1,23 @@
 <%= provide(:title, "All kittens") %>
-
-<% @kittens.each do |kitten| %>
-  
+<% unless @kittens %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Cuteness</th>
+        <th scope="col">Softness</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @kittens.each do |kitten| %>
+      <tr>
+        <td><%= kitten.name %></td>
+        <td><%= kitten.age %></td>
+        <td><%= kitten.cuteness %></td>
+        <td><%= kitten.softness %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 <% end %>
