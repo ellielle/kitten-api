@@ -1,24 +1,20 @@
-# README
+# Kitten API
+### About
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project from [The Odin Proiject](https://www.theodinproject.com/courses/ruby-on-rails/lessons/apis).
 
-Things you may want to cover:
+This is mean to be a fast and straightforward project where Rails is set up to be a data-producing API.
 
-* Ruby version
+With kittens.
 
-* System dependencies
 
-* Configuration
+### Getting started
 
-* Database creation
+#### Requirements:
+* Ruby 2.6.3
+* Rails 6.0.0
+* [Yarn](https://yarnpkg.com/en/docs/install) 1.19.1
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Installation:
+* Clone the repo
+* Run ```$ bundle install --without production``` to install dependencies
