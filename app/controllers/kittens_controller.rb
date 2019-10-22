@@ -8,7 +8,7 @@ class KittensController < ApplicationController
   end
 
   def show
-    @kitten = Kitten.first
+    @kitten = Kitten.find_by_id(params[:id])
   end
 
   def index
