@@ -1,5 +1,5 @@
 <%= provide(:title, "All kittens") %>
-<table class="table table-hover">
+<table class="table table-hover table-sm">
   <thead>
     <tr>
       <th scope="col">Name</th>
@@ -11,7 +11,7 @@
   <tbody>
   <% @kittens.each do |kitten| %>
     <tr>
-      <td><%= kitten.name %></td>
+      <td><%= link_to kitten.name, kitten_path(kitten) %></td>
       <td><%= kitten.age %></td>
       <td><%= kitten.cuteness %></td>
       <td><%= kitten.softness %></td>
