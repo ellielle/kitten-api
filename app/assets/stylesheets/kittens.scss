@@ -5,15 +5,16 @@
 /* Variables */
 $gray-text-color: #888;
 $gray-text-darker-color: #666;
+$dark-text-color: #212529;
 
 /* General */
 body {
   padding-top: 60px;
 }
 
-table {
+.table {
   a {
-    color: $gray-text-darker-color;
+    color: $gray-text-color;
     &:hover {
       color: #444;
     }
