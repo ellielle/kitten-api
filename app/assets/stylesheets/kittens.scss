@@ -2,11 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Variables */
+$gray-text-color: #888;
+$gray-text-darker-color: #666;
+
 /* General */
-html {
-  margin-top: 60px;
+body {
+  padding-top: 60px;
 }
 
+table {
+  a {
+    color: $gray-text-darker-color;
+    &:hover {
+      color: #444;
+    }
+  }
+}
+
+.pagy-bootstrap-nav {
+  .page-link {
+    color: $gray-text-darker-color;
+    &:hover {
+      color: white;
+      background-color: $gray-text-color;
+      border-color: $gray-text-color;
+    }
+  }
+  .page-item.active .page-link {
+    background-color: $gray-text-color;
+    border-color: $gray-text-color;
+    color: white;
+  }
+}
 
 /* Misc */
 .debug_dump {
@@ -14,5 +42,7 @@ html {
   float: left;
   width: 100%;
   margin-top: 45px;
+  margin-bottom: 60px;
   background-color: #EEE;
+  font-size: small;
 }
