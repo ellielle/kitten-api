@@ -1,5 +1,5 @@
 <%= provide(:title, "All kittens") %>
-<table class="table table-hover table-sm">
+<table class="table table-hover table-sm ">
   <thead>
     <tr>
       <th scope="col">Name</th>
@@ -19,3 +19,5 @@
   <% end %>
   </tbody>
 </table>
+
+<%== pagy_bootstrap_nav(@pagy) %>
