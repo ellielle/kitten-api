@@ -12,7 +12,7 @@ class KittensController < ApplicationController
   end
 
   def index
-    @kittens = Kitten.all
+    @pagy, @kittens = pagy(Kitten.all, items: 15)
   end
 
   def edit
