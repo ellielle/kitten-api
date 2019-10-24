@@ -48,10 +48,15 @@ $navbar-background-color: #333333;
         }
       }
     }
-    .github-icon {
-      margin-left: -300px;
-      height: 25px;
-      width: 25px;
+  }
+  .github-icon {
+    height: 25px;
+    width: 25px;
+  }
+  .navbar-kittens {
+    color: white;
+    &:hover {
+      text-decoration: none;
     }
   }
 }
