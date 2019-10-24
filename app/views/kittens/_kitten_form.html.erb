@@ -1,0 +1,25 @@
+<%= form_with model: @kitten, local: true do |f| %>
+  <div class="row kitten-form">
+    <div class="col-sm-4">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control", required: true %>
+    </div>
+    <div class="col-sm-1">
+      <%= f.label :age %>
+      <%= f.text_field :age, class: "form-control", required: true %>
+    </div>
+  </div>
+  <div class="row kitten-form">
+    <div class="col-sm-4">
+      <%= f.label :softness %>
+      <%= f.select :softness, options_for_select(softness, required: true), class: "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= f.label :cuteness %>
+      <%= f.select :cuteness, options_for_select(cuteness, required: true) %>
+    </div>
+  </div>
+    <%= f.submit "Create Kitten", class: "btn btn-primary" %>
+<% end %>
