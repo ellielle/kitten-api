@@ -19,7 +19,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8.2'
   gem 'factory_bot_rails', '~> 5.1.1'
   gem 'capybara', '~> 3.29.0'
-  gem 'database_cleaner', '~> 1.7.0'
 end
 
 group :development do
