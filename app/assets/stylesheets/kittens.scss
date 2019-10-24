@@ -8,8 +8,6 @@ $gray-text-darker-color: #666;
 $form-gray: #6c757d;
 $button-border: #2E2F30;
 $button-hover: #999999;
-$navbar-link-color: white;
-$navbar-link-hover: grey;
 $navbar-background-color: #333333;
 
 /* General */
@@ -20,6 +18,14 @@ $navbar-background-color: #333333;
     &:hover {
       color: #444;
     }
+  }
+}
+
+.btn-primary {
+  background-color: $form-gray !important;
+  border-color: $button-border !important;
+  &:hover {
+    background-color: $button-hover !important;
   }
 }
 
@@ -38,17 +44,6 @@ $navbar-background-color: #333333;
 .navbar {
   margin-bottom: 40px;
   background-color: $navbar-background-color;
-  .nav {
-    li {
-      a {
-        color: $navbar-link-color;
-        &:hover {
-          color: $navbar-link-hover;
-          background-color: $navbar-background-color;
-        }
-      }
-    }
-  }
   .github-icon {
     height: 25px;
     width: 25px;
@@ -77,6 +72,21 @@ $navbar-background-color: #333333;
     border-color: $gray-text-color;
     color: white;
   }
+}
+
+/* Forms */
+label {
+  color: $form-gray;
+  font-weight: 400;
+}
+
+.form-control {
+  margin-top: -10px;
+  height: calc(1.0em + 0.75rem + 2px) !important;
+}
+
+.kitten-form {
+  margin-bottom: 5px;
 }
 
 /* Misc */
