@@ -5,11 +5,14 @@
 /* Variables */
 $gray-text-color: #888;
 $gray-text-darker-color: #666;
+$form-gray: #6c757d;
+$button-border: #2E2F30;
+$button-hover: #999999;
+$navbar-link-color: white;
+$navbar-link-hover: grey;
+$navbar-background-color: #333333;
 
 /* General */
-body {
-  padding-top: 60px;
-}
 
 .table {
   a {
@@ -19,6 +22,41 @@ body {
     }
   }
 }
+
+/* Header */
+
+#logo {
+  float: left;
+  font-size: 1.5em;
+  color: white;
+  text-transform: capitalize;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.navbar {
+  margin-bottom: 40px;
+  background-color: $navbar-background-color;
+  .nav {
+    li {
+      a {
+        color: $navbar-link-color;
+        &:hover {
+          color: $navbar-link-hover;
+          background-color: $navbar-background-color;
+        }
+      }
+    }
+    .github-icon {
+      margin-left: -300px;
+      height: 25px;
+      width: 25px;
+    }
+  }
+}
+
+/* Pagination */
 
 .pagy-bootstrap-nav {
   .page-link {
@@ -37,6 +75,7 @@ body {
 }
 
 /* Misc */
+
 .debug_dump {
   clear: both;
   float: left;
