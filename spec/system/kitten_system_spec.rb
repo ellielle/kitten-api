@@ -32,8 +32,8 @@ RSpec.describe "Kitten management", type: :system do
       select("Purrfect", from: "Softness")
       select("Magnificent", from: "Cuteness")
       click_button("Create Kitten")
-      expect(current_path).to eq(kitten_path(2))
       expect(page.status_code).to be(200)
+      expect(current_path).to eq(kitten_path(2))
     end
   end
 end
