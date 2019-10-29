@@ -1,4 +1,4 @@
-<%= form_with model: @kitten, url: post_url, local: true do |f| %>
+<%= form_with model: @kitten, url: form_url, local: true do |f| %>
   <div class="row kitten-form">
     <div class="col-sm-4">
       <%= f.label :name %>
@@ -21,5 +21,5 @@
       <%= f.select :cuteness, options_for_select(cute_list, required: true) %>
     </div>
   </div>
-    <%= f.submit button_text, class: "btn btn-primary" %>
+    <%= f.submit "Create Kitten", class: "btn btn-primary" %>
 <% end %>

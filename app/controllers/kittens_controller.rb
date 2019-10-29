@@ -10,7 +10,7 @@ class KittensController < ApplicationController
       redirect_to kitten_path(@kitten)
     else
       flash[:warning] = "Invalid input."
-      redirect_to create_kitten_path
+      render :new
     end
   end
 
@@ -27,11 +27,21 @@ class KittensController < ApplicationController
   end
 
   def update
-
+    @kitten = Kitten.find_by_id(params[:id])
+    if @kitten.empty?
+      flash.now[:warning] = "Unable to find kitten."
+      render :edit
+    else
+      @kitten.update_attributes(kitten_params)
+      flash[:success] = "Kitten successfully updated!"
+      redirect_to kitten_path(@kitten)
+    end
   end
 
   def destroy
-
+    Kitten.find_by_id(params[:format]).destroy
+    flash[:success] = "Kitten removed! They didn't like you anyway."
+    redirect_to root_url
   end
 
   def kitten_params
