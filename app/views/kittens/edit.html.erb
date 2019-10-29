@@ -1,2 +1,3 @@
 <%= provide(:title, "Modify Kitten") %>
-<%= render 'kittens/kitten_form' %>
+<%= render 'kittens/kitten_form', post_url: edit_kitten_path,
+           button_text: "Submit Changes" %>

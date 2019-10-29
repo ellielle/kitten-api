@@ -7,3 +7,7 @@
     <p>Softness: <%= @kitten.softness %></p>
   </dd>
 </dl>
+<div class="kitten-options">
+  <%= link_to "Edit", edit_kitten_path(@kitten) %>
+  <%= link_to "Delete", method: :destroy %>
+</div>

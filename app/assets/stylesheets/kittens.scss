@@ -5,6 +5,7 @@
 /* Variables */
 $gray-text-color: #888;
 $gray-text-darker-color: #666;
+$other-gray: #444;
 $form-gray: #6c757d;
 $button-border: #2E2F30;
 $button-hover: #999999;
@@ -16,7 +17,7 @@ $navbar-background-color: #333333;
   a {
     color: $gray-text-color;
     &:hover {
-      color: #444;
+      color: $other-gray;
     }
   }
 }
@@ -87,6 +88,16 @@ label {
 
 .kitten-form {
   margin-bottom: 5px;
+}
+
+.kitten-options {
+  a {
+    margin-right: 20px;
+    color: $gray-text-color;
+    &:hover {
+      color: $other-gray;
+    }
+  }
 }
 
 /* Misc */
