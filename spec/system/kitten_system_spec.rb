@@ -43,6 +43,19 @@ RSpec.describe "Kitten management", type: :system do
       click_button("Create Kitten")
       expect(page.status_code).to be(200)
       expect(current_path).to eq(kitten_path(2))
+      expect(page).to have_content("Kitten created!")
+    end
+
+    it "rejects invalid information" do
+      visit create_kitten_path
+      expect(page.status_code).to be(200)
+      fill_in("Name", with: "Clover")
+      fill_in("Age", with: "a")
+      select("Purrfect", from: "Softness")
+      select("Magnificent", from: "Cuteness")
+      click_button("Create Kitten")
+      expect(current_path).to eq(create_kitten_path)
+      expect(page).to have_content("Invalid input.")
     end
   end
 end
