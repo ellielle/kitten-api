@@ -9,7 +9,7 @@ class KittensController < ApplicationController
       flash[:success] = "Kitten created!"
       redirect_to kitten_path(@kitten)
     else
-      flash[:warning] = "You done broke something."
+      flash[:warning] = "Invalid input."
       redirect_to create_kitten_path
     end
   end

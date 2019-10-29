@@ -5,10 +5,11 @@
   <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |type, message| %>
-        <% content_tag :div, message, class: "alert alert#{type}" %>
+        <%= content_tag :div, message, class: "alert alert-#{type}" %>
       <% end %>
       <%= yield %>
     </div>
     <%= debug(params) if Rails.env.development? %>
+    <%= debug(flash)  %>
   </body>
 </html>
