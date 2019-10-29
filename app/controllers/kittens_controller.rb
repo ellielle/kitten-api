@@ -4,7 +4,14 @@ class KittensController < ApplicationController
   end
 
   def create
-
+    @kitten = Kitten.new(kitten_params)
+    if @kitten&.save
+      flash[:success] = "Kitten created!"
+      redirect_to kitten_path(@kitten)
+    else
+      flash[:warning] = "You done broke something."
+      redirect_to create_kitten_path
+    end
   end
 
   def show
@@ -25,5 +32,9 @@ class KittensController < ApplicationController
 
   def destroy
 
+  end
+
+  def kitten_params
+    params.require(:kitten).permit(:name, :age, :cuteness, :softness)
   end
 end
