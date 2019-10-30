@@ -23,12 +23,13 @@ class KittensController < ApplicationController
   end
 
   def edit
-
+    @kitten = Kitten.find_by_id(params[:id])
+    @kitten_id = params[:id]
   end
 
   def update
-    @kitten = Kitten.find_by_id(params[:id])
-    if @kitten.empty?
+    @kitten = Kitten.find_by_id(params[:kitten][:kitten_id])
+    if @kitten.nil?
       flash.now[:warning] = "Unable to find kitten."
       render :edit
     else
