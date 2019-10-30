@@ -9,5 +9,5 @@
 </dl>
 <div class="kitten-options">
   <%= link_to "Edit", edit_kitten_path(@kitten) %>
-  <%= link_to "Delete", method: :destroy %>
+  <%= link_to "Delete", method: :delete, data: { confirm: "Are you sure?" } %>
 </div>
