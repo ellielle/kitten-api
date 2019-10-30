@@ -33,7 +33,7 @@ class KittensController < ApplicationController
       flash.now[:warning] = "Unable to find kitten."
       render :edit
     else
-      @kitten.update_attributes(kitten_params)
+      @kitten.update(kitten_params)
       flash[:success] = "Kitten successfully updated!"
       redirect_to kitten_path(@kitten)
     end
