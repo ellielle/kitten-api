@@ -15,6 +15,7 @@ With kittens.
 * Rails 6.0.0
 * [Yarn](https://yarnpkg.com/en/docs/install) 1.19.1
 * [REST Client](https://github.com/rest-client/rest-client)
+* [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/) for your version of Chrome
 
 #### Installation:
 * Clone repo
