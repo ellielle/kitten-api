@@ -10,7 +10,7 @@ RSpec.describe "Kitten management", type: :system do
       create(:kitten).valid?
       visit root_path
       expect(page.status_code).to be(200)
-      expect(page).to have_content("Meowmix").and have_content("Super Floof")
+      expect(page).to have_content("Meowmix")
     end
 
     it "links to create new kitten page" do
@@ -56,6 +56,37 @@ RSpec.describe "Kitten management", type: :system do
       click_button("Create Kitten")
       expect(current_path).to eq(create_kitten_path)
       expect(page).to have_content("Invalid input.")
+    end
+  end
+
+  context "when updating a kitten" do
+    it "rejects invalid information" do
+      kitten = create(:kitten)
+      visit edit_kitten_path(kitten)
+      expect(page.status_code).to be(200)
+      fill_in("Name", with: "Poppy")
+      fill_in("Age", with: "a")
+      select("Fleece Blanket", from: "Softness")
+      select("Adorable", from: "Cuteness")
+      click_button("Submit Changes")
+      expect(kitten.name).to eq("Meowmix")
+    end
+  end
+end
+
+RSpec.describe "Kitten selenium tests", type: :system do
+  before do
+    driven_by(:selenium)
+  end
+
+  context "when deleting a kitten" do
+    it "should make it run away" do
+      create(:kitten)
+      expect(Kitten.count).to eq(1)
+      visit root_path
+      click_link("Delete")
+      page.driver.browser.switch_to.alert.accept
+      expect(page).to have_content("Kitten removed!")
     end
   end
 end
