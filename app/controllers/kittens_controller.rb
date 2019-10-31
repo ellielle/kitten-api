@@ -16,10 +16,20 @@ class KittensController < ApplicationController
 
   def show
     @kitten = Kitten.find_by_id(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @kitten }
+    end
   end
 
   def index
     @pagy, @kittens = pagy(Kitten.all, items: 15)
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @kittens }
+    end
   end
 
   def edit
